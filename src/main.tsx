@@ -3,14 +3,14 @@ import * as ReactDOM from "react-dom/client";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import theme from "./theme";
-import App from "./App";
+import IndexPage from "./pages/IndexPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/LoginPage";
 import Signup from "./pages/SignupPage";
 import Error from "./pages/ErrorPage";
 import Layout from "./components/layout/Layout";
-import UploadPage from "./pages/PageTwo";
-import RecordingDetails from "./pages/PageOne";
+import PageTwo from "./pages/PageTwo";
+import PageOne from "./pages/PageOne";
 import { PrivateRoutes } from "./pages/PrivateRoute";
 import { FirebaseAuthProvider } from "./contexts/AuthContext";
 
@@ -24,7 +24,15 @@ const routes = [
         path: "/",
         element: (
           <Layout>
-            <App></App>
+            <IndexPage/>
+          </Layout>
+        ),
+      },
+      {
+        path: "/nested/:id",
+        element: (
+          <Layout>
+            <PageTwo></PageTwo>
           </Layout>
         ),
       },
@@ -32,15 +40,7 @@ const routes = [
         path: "/upload",
         element: (
           <Layout>
-            <UploadPage></UploadPage>
-          </Layout>
-        ),
-      },
-      {
-        path: "/recordings/:id",
-        element: (
-          <Layout>
-            <RecordingDetails />
+            <PageTwo></PageTwo>
           </Layout>
         ),
       },

@@ -2,9 +2,9 @@ import Container from "@mui/material/Container";
 
 import { Box, Paper, Typography } from "@mui/material";
 import useSWR, { SWRResponse } from "swr";
-import createFetcher from "./utils/fetcher";
-import { fetchRecordings } from "./lib/firebase";
-import RecordingsTable from "./modules/page_two/components/RecordingsTable";
+import createFetcher from "../utils/fetcher";
+import { fetchRecordings } from "../lib/firebase";
+import RecordingsTable from "../modules/page_two/components/RecordingsTable";
 
 export default function App() {
   const fetcher = createFetcher(fetchRecordings);
